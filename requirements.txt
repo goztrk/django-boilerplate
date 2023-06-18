@@ -6,11 +6,17 @@
 #
 asgiref==3.7.2
     # via django
-django==4.2.2
+dj-database-url==2.0.0
     # via -r requirements.in
+django==4.2.2
+    # via
+    #   -r requirements.in
+    #   dj-database-url
 django-split-settings==1.2.0
     # via -r requirements.in
 python-decouple==3.8
     # via -r requirements.in
 sqlparse==0.4.4
     # via django
+typing-extensions==4.6.3
+    # via dj-database-url
