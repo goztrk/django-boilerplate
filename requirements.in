@@ -1,2 +1,3 @@
 django
 django-split-settings
+python-decouple
