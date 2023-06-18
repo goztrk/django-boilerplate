@@ -1,0 +1,39 @@
+[project]
+name = "bookswap-app"
+version = "1.0.0"
+dependencies = ["django"]
+
+[tool.Black]
+line-length = 100
+target-version = ['py311']
+quiet = true
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \venv
+  | _build
+  | build
+  | dist
+  | [a-z_]+/migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 8
+lines_after_imports = 2
+known_django = "django"
+known_zion = "zion"
+known_first_party = ["core"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "DJANGO", "ZION", "FIRSTPARTY", "LOCALFOLDER"]
+import_heading_stdlib = "Python Standard Library"
+import_heading_thirdparty = "Third Party (PyPI) Imports"
+import_heading_django = "Django Imports"
+import_heading_zion = "ZION Shared Library Imports"
+import_heading_firstparty = "Application Imports"
+
+[tool.pylint.format]
+max-line-length = 100
