@@ -1,3 +1,6 @@
+"""
+Accounts specific User Model
+"""
 # Django Imports
 from django.db import (
     models,
@@ -5,4 +8,6 @@ from django.db import (
 
 
 class User(models.Model):
-    pass
+    """
+    Accounts specific User Model
+    """
