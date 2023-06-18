@@ -1,1 +1,9 @@
 -c requirements.txt
+black
+coverage
+djlint
+flake8
+isort
+pylint
+pre-commit
+pylint-django
