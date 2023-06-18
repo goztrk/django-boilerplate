@@ -3,7 +3,9 @@ Django Security Settings
 """
 
 # Third Party (PyPI) Imports
-from decouple import config
+from decouple import (
+    config,
+    )
 
 
 SECRET_KEY = config("DJANGO_SECRET_KEY")
