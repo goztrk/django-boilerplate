@@ -12,13 +12,7 @@ django==4.2.2
     # via
     #   -r requirements.in
     #   dj-database-url
-    #   django-browser-reload
-    #   django-tailwind
-django-browser-reload==1.10.0
-    # via django-tailwind
 django-split-settings==1.2.0
-    # via -r requirements.in
-django-tailwind==3.5.0
     # via -r requirements.in
 python-decouple==3.8
     # via -r requirements.in
