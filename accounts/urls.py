@@ -2,7 +2,5 @@
 Accounts URLs
 """
 
-app_name = 'accounts'
-urlpatterns = [
-
-]
+app_name = "accounts"
+urlpatterns = []

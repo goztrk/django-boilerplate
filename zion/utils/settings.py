@@ -5,7 +5,7 @@ import typing as t
 from importlib.resources import (
     as_file,
     files,
-    )
+)
 
 
 # If resources are located in archives, importlib will create temporary
@@ -43,20 +43,17 @@ class _Resource(str):
     package: str
     filename: str
 
-    def __new__(cls, package: Package, filename: str) -> '_Resource':
+    def __new__(cls, package: Package, filename: str) -> "_Resource":
         try:
             ref = files(package) / filename
         except ModuleNotFoundError:
-            _resource = super().__new__(cls, '')
+            _resource = super().__new__(cls, "")
             _resource.module_not_found = True
             return _resource
 
         file_manager = contextlib.ExitStack()
         __resource_file_contexts__.append(file_manager)
-        return super().__new__(
-            cls,
-            file_manager.enter_context(as_file(ref))
-        )
+        return super().__new__(cls, file_manager.enter_context(as_file(ref)))
 
     def __init__(self, package: Package, filename: str) -> None:
         super().__init__()
