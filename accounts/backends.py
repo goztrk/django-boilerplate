@@ -3,26 +3,30 @@ Accounts Backends
 """
 
 # Python Standard Library
+import operator
+from functools import (
+    reduce,
+)
 from typing import (
     Any,
-    )
+)
 
 # Django Imports
 from django.conf import (
     settings,
-    )
+)
 from django.contrib.auth import (
     get_user_model,
-    )
+)
 from django.contrib.auth.backends import (
     ModelBackend,
-    )
+)
 from django.db.models import (
     Q,
-    )
+)
 from django.http.request import (
     HttpRequest,
-    )
+)
 
 
 UserModel = get_user_model()
@@ -44,9 +48,8 @@ class AccountsBackend(ModelBackend):
             return
 
         try:
-            query = None
-            for field in settings.ACCOUNTS_LOGIN_WITH:
-                query |= Q(**{field: username})
+            query = [Q(**{field: username}) for field in settings.ACCOUNTS_LOGIN_WITH]
+            query = reduce(operator.or_, query, Q())
             user = UserModel.objects.get(query)
         except UserModel.DoesNotExist:
             UserModel().set_password(password)
