@@ -62,3 +62,9 @@ class _Resource(str):
         else:
             self.package = package
         self.filename = filename
+
+    def __repr__(self):
+        return f"_Resource(package={self.package}, filename='{self.filename}')"
+
+    def __str__(self):
+        return f"Resource: {self.filename}"
