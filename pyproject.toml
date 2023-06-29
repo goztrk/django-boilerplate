@@ -41,3 +41,6 @@ import_heading_firstparty = "Application Imports"
 
 [tool.pylint.format]
 max-line-length = 100
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"

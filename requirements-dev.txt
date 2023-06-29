@@ -40,6 +40,8 @@ html-void-elements==0.1.0
     # via djlint
 identify==2.5.24
     # via pre-commit
+iniconfig==2.0.0
+    # via pytest
 isort==5.12.0
     # via
     #   -r requirements-dev.in
@@ -61,7 +63,9 @@ mypy-extensions==1.0.0
 nodeenv==1.8.0
     # via pre-commit
 packaging==23.1
-    # via black
+    # via
+    #   black
+    #   pytest
 pathspec==0.11.1
     # via
     #   black
@@ -71,6 +75,8 @@ platformdirs==3.5.3
     #   black
     #   pylint
     #   virtualenv
+pluggy==1.2.0
+    # via pytest
 pre-commit==3.3.3
     # via -r requirements-dev.in
 pycodestyle==2.10.0
@@ -86,6 +92,10 @@ pylint-django==2.5.3
     # via -r requirements-dev.in
 pylint-plugin-utils==0.8.2
     # via pylint-django
+pytest==7.4.0
+    # via pytest-django
+pytest-django==4.5.2
+    # via -r requirements-dev.in
 pyyaml==6.0
     # via
     #   djlint

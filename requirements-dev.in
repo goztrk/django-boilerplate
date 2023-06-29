@@ -7,3 +7,4 @@ isort
 pylint
 pre-commit
 pylint-django
+pytest-django
