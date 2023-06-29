@@ -1,11 +1,22 @@
 SHELL := /bin/bash # Use bash syntax
 ARG := $(word 2, $(MAKECMDGOALS) )
+SCSS=core/scss
+STATIC=static
 
 clean:
 	@find . -name "*.pyc" -exec rm -rf {} \;
 	@find . -name "__pycache__" -delete
 
-compile_install_requirements:
+compile-scss:
+	pysassc $(SCSS)/style.scss $(STATIC)/css/style.css -s compressed
+
+compile-scss-debug:
+	pysassc $(SCSS)/style.scss $(STATIC)/css/style.css -sourcemap
+
+watch-scss:
+	watchmedo shell-command --patterns=*.scss --recursive --command="make compile-scss-debug" $(SCSS)
+
+compile-install-requirements:
 	@echo 'Installing pip-tools...'
 	export PIP_REQUIRE_VIRTUALENV=true; \
 	pip install pip-tools
