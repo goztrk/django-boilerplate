@@ -3,10 +3,12 @@ Django Database Settings
 """
 
 # Third Party (PyPI) Imports
-from decouple import (
+from dj_database_url import parse as db_url
+
+# Application Imports
+from core.settings import (
     config,
 )
-from dj_database_url import parse as db_url
 
 
 DATABASES = {

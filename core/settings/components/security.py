@@ -2,8 +2,8 @@
 Django Security Settings
 """
 
-# Third Party (PyPI) Imports
-from decouple import (
+# Application Imports
+from core.settings import (
     config,
 )
 

@@ -8,30 +8,38 @@ To change settings file set `DJANGO_ENV` in `.env` file
 
 # Third Party (PyPI) Imports
 from decouple import (
-    config,
-    )
+    Config,
+    RepositoryEnv,
+)
 from split_settings.tools import (
     include,
     optional,
-    )
+)
 
 # ZION Shared Library Imports
 from zion.utils.settings import (
     resource,
-    )
+)
+
+# Application Imports
+from core.settings.components.dirs import (
+    BASE_DIR,
+)
 
 
-ENV = config('DJANGO_ENV', default='development')
+config = Config(RepositoryEnv(BASE_DIR / ".env"))
+
+ENV = config("DJANGO_ENV", default="development")
 
 include(
     *[
         # Include all settings components
-        'components/*.py',
+        "components/*.py",
         # Include App Settings
-        resource('accounts', 'settings.py'),
+        resource("accounts", "settings.py"),
         # Select the right environment
-        f'environments/{ENV}.py',
+        f"environments/{ENV}.py",
         # Optionally override some settings
-        optional('environment/local.py'),
+        optional("environment/local.py"),
     ]
 )
