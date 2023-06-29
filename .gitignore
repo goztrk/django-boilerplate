@@ -8,3 +8,6 @@ venv
 
 # SQLite3
 db.sqlite3
+
+# NodeJS
+node_modules
