@@ -11,10 +11,10 @@ compile-scss:
 	pysassc $(SCSS)/style.scss $(STATIC)/css/style.css -s compressed
 
 compile-scss-debug:
-	pysassc $(SCSS)/style.scss $(STATIC)/css/style.css -sourcemap
+	pysassc $(SCSS)/style.scss $(STATIC)/css/style.css --sourcemap
 
 watch-scss:
-	watchmedo shell-command --patterns=*.scss --recursive --command="make compile-scss-debug" $(SCSS)
+	watchmedo shell-command --patterns=*.scss --ignore-patterns="node_modules/*" --recursive --command="make compile-scss-debug"
 
 compile-install-requirements:
 	@echo 'Installing pip-tools...'
