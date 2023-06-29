@@ -114,6 +114,8 @@ tqdm==4.65.0
     # via djlint
 virtualenv==20.23.1
     # via pre-commit
+watchdog==3.0.0
+    # via -r requirements-dev.in
 wrapt==1.15.0
     # via astroid
 
