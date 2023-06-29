@@ -4,6 +4,7 @@ coverage
 djlint
 flake8
 isort
+libsass
 pylint
 pre-commit
 pylint-django
