@@ -22,7 +22,7 @@ def render(
     """
     if context is not None and zion_setting("ZION_TEMPLATE_CONTEXT"):
         template_context_builder = import_string(zion_setting("ZION_TEMPLATE_CONTEXT"))
-        data: dict = template_context_builder()
+        data: dict = template_context_builder(request)
         data.update(context)
         context = data
 
