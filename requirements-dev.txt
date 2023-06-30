@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements-dev.txt --resolver=backtracking requirements-dev.in
 #
-astroid==2.15.5
-    # via pylint
 black==23.3.0
     # via -r requirements-dev.in
 cfgv==3.3.1
@@ -20,8 +18,6 @@ coverage==7.2.7
     # via -r requirements-dev.in
 cssbeautifier==1.14.8
     # via djlint
-dill==0.3.6
-    # via pylint
 distlib==0.3.6
     # via virtualenv
 djlint==1.31.0
@@ -43,23 +39,17 @@ identify==2.5.24
 iniconfig==2.0.0
     # via pytest
 isort==5.12.0
-    # via
-    #   -r requirements-dev.in
-    #   pylint
+    # via -r requirements-dev.in
 jsbeautifier==1.14.8
     # via
     #   cssbeautifier
     #   djlint
 json5==0.9.14
     # via djlint
-lazy-object-proxy==1.9.0
-    # via astroid
 libsass==0.22.0
     # via -r requirements-dev.in
 mccabe==0.7.0
-    # via
-    #   flake8
-    #   pylint
+    # via flake8
 mypy-extensions==1.0.0
     # via black
 nodeenv==1.8.0
@@ -75,7 +65,6 @@ pathspec==0.11.1
 platformdirs==3.5.3
     # via
     #   black
-    #   pylint
     #   virtualenv
 pluggy==1.2.0
     # via pytest
@@ -85,15 +74,6 @@ pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
     # via flake8
-pylint==2.17.4
-    # via
-    #   -r requirements-dev.in
-    #   pylint-django
-    #   pylint-plugin-utils
-pylint-django==2.5.3
-    # via -r requirements-dev.in
-pylint-plugin-utils==0.8.2
-    # via pylint-django
 pytest==7.4.0
     # via pytest-django
 pytest-django==4.5.2
@@ -108,16 +88,12 @@ six==1.16.0
     # via
     #   cssbeautifier
     #   jsbeautifier
-tomlkit==0.11.8
-    # via pylint
 tqdm==4.65.0
     # via djlint
 virtualenv==20.23.1
     # via pre-commit
 watchdog==3.0.0
     # via -r requirements-dev.in
-wrapt==1.15.0
-    # via astroid
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

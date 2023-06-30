@@ -5,8 +5,6 @@ djlint
 flake8
 isort
 libsass
-pylint
 pre-commit
-pylint-django
 pytest-django
 watchdog
