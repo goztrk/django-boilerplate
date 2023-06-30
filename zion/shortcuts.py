@@ -1,7 +1,4 @@
 # Django Imports
-from django.conf import (
-    settings,
-)
 from django.http import (
     HttpResponse,
 )
@@ -12,6 +9,7 @@ from django.template import (
 # ZION Shared Library Imports
 from zion.utils import (
     import_string,
+    zion_setting,
 )
 
 
@@ -22,8 +20,8 @@ def render(
     Return an HttpResponse whose content is filled with the result of calling
     django.template.loader.render_to_string() with the passed arguments.
     """
-    if context is not None and getattr(settings, "ZION_TEMPLATE_CONTEXT", None):
-        template_context_builder = import_string(settings.ZION_TEMPLATE_CONTEXT)
+    if context is not None and zion_setting("ZION_TEMPLATE_CONTEXT"):
+        template_context_builder = import_string(zion_setting("ZION_TEMPLATE_CONTEXT"))
         data: dict = template_context_builder()
         data.update(context)
         context = data
