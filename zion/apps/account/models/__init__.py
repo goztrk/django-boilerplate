@@ -11,6 +11,10 @@ from zion.apps.account.models.password import (
     PasswordExpiry,
     PasswordHistory,
 )
+from zion.apps.account.models.signup import (
+    SignupCode,
+    SignupCodeResult,
+)
 
 
 __all__ = [
@@ -19,4 +23,6 @@ __all__ = [
     "EmailConfirmation",
     "PasswordExpiry",
     "PasswordHistory",
+    "SignupCode",
+    "SignupCodeResult",
 ]
