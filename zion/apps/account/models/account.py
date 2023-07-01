@@ -4,12 +4,14 @@ from django.db import models
 # ZION Shared Library Imports
 from zion.apps.account.conf import settings
 from zion.apps.account.models.email import EmailAddress
+from zion.apps.account.models.fields import TimeZoneField
 
 
 class Account(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, related_name="account", on_delete=models.CASCADE
     )
+    timezone = TimeZoneField()
 
     class Meta:
         app_label = "account"
