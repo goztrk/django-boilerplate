@@ -1,18 +1,12 @@
 # Django Imports
-from django.core.exceptions import (
-    ImproperlyConfigured,
-)
+from django.core.exceptions import ImproperlyConfigured
 from django.views.generic.base import (
     TemplateResponseMixin as DjangoTemplateResponseMixin,
 )
 
 # ZION Shared Library Imports
-from zion.conf import (
-    settings,
-)
-from zion.utils import (
-    import_string,
-)
+from zion.conf import settings
+from zion.utils import import_string
 
 
 class TemplateResponseMixin(DjangoTemplateResponseMixin):
@@ -20,7 +14,7 @@ class TemplateResponseMixin(DjangoTemplateResponseMixin):
 
     @property
     def response_class(self):
-        renderer = import_string(settings.ZION_TEMPLATE_CONTEXT)
+        renderer = import_string(settings.ZION_CONTEXT_RENDERER)
         return renderer
 
     def get_template_names(self):

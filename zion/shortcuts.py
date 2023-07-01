@@ -15,8 +15,8 @@ def render(
     django.template.loader.render_to_string() with the passed arguments.
     """
     if context is not None:
-        template_context_builder = import_string(settings.ZION_TEMPLATE_CONTEXT)
-        data: dict = template_context_builder(request)
+        context_renderer_builder = import_string(settings.ZION_CONTEXT_RENDERER)
+        data: dict = context_renderer_builder(request)
         data.update(context)
         context = data
 

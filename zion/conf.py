@@ -6,7 +6,7 @@ from django.conf import settings  # noqa
 
 
 class ZionAppConf(AppConf):
-    TEMPLATE_CONTEXT = "zion.views.contexts.template_context"
+    CONTEXT_RENDERER = "zion.utils.views.context_renderer"
     SITE_NAME = "Zion"
     DEFAULT_HTTP_PROTOCOL = "http"
 
