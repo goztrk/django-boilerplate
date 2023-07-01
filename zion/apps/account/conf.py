@@ -9,6 +9,7 @@ from zion.constants.timezones import TIMEZONES
 
 
 class AccountAppConf(AppConf):
+    LOGIN_FIELD = "username"
     CREATE_ON_SAVE = True
     LOGIN_URL = "account:login"
     LOGOUT_URL = "account:logout"
@@ -16,6 +17,7 @@ class AccountAppConf(AppConf):
     LOGIN_REDIRECT_URL = "/"
     LOGOUT_REDIRECT_URL = "/"
     PASSWORD_STRIP = True
+    REMEMBER_ME_EXPIRY = 60 * 60 * 24 * 365 * 10
     EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
     EMAIL_CONFIRMATION_AUTO_LOGIN = False
     EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = "account:login"

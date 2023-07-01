@@ -1,3 +1,6 @@
+# Python Standard Library
+from typing import Any
+
 # Django Imports
 from django.contrib import auth
 from django.shortcuts import redirect
@@ -10,7 +13,10 @@ from django.views.generic.edit import FormView
 # ZION Shared Library Imports
 from zion.apps.account import signals
 from zion.apps.account.conf import settings
-from zion.apps.account.forms import LoginUsernameForm
+from zion.apps.account.forms import (
+    LoginEmailForm,
+    LoginUsernameForm,
+)
 from zion.apps.account.utils import (
     default_redirect,
     get_form_data,
@@ -27,6 +33,14 @@ class LoginView(FormView):
     form_class = LoginUsernameForm
     form_kwargs = {}
     redirect_field_name = "next"
+
+    def __init__(self, **kwargs: Any) -> None:
+        self.form_class = (
+            LoginUsernameForm
+            if self.ZION_ACCOUNT_LOGIN_FIELD == "username"
+            else LoginEmailForm
+        )
+        super().__init__(**kwargs)
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
