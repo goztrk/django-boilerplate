@@ -7,14 +7,6 @@ from importlib.resources import (
     files,
 )
 
-# Django Imports
-from django.conf import (
-    settings,
-)
-
-# ZION Shared Library Imports
-import zion.constants.defaults
-
 
 # If resources are located in archives, importlib will create temporary
 # files to access them contained within contexts, we track the contexts
@@ -76,15 +68,3 @@ class _Resource(str):
 
     def __str__(self):
         return f"Resource: {self.filename}"
-
-
-def zion_setting(key, default=None):
-    if hasattr(settings, key):
-        value = getattr(settings, key)
-    elif default is not None:
-        value = default
-    elif hasattr(zion.constants.defaults, key):
-        value = getattr(zion.constants.defaults, key)
-    else:
-        value = None
-    return value

@@ -4,12 +4,12 @@ from socket import (
 )
 
 # ZION Shared Library Imports
-from zion.utils import (
-    zion_setting,
+from zion.conf import (
+    settings,
 )
 
 
 def template_context(request, context={}):
-    context["site_name"] = zion_setting("ZION_SITE_NAME")
+    context["site_name"] = settings.ZION_SITE_NAME
     context["server"] = {"hostname": gethostname()}
     return context
