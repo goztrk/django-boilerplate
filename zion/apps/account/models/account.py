@@ -1,5 +1,7 @@
 # Django Imports
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # ZION Shared Library Imports
 from zion.apps.account.conf import settings
@@ -33,3 +35,17 @@ class Account(models.Model):
                 kwargs["confirm"] = confirm_email
             EmailAddress.objects.add_email(account.user, account.user.email, **kwargs)
         return account
+
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def user_post_save(sender, **kwargs):
+    # Disable post_save during `manage.py loaddata``
+    if kwargs.get("raw", False):
+        return False
+
+    user, created = kwargs["instance"], kwargs["created"]
+    disabled = getattr(
+        user, "_disable_account_creation", not settings.ZION_ACCOUNT_CREATE_ON_SAVE
+    )
+    if created and not disabled:
+        Account.objects.create(user=user)

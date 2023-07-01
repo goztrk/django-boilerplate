@@ -11,3 +11,8 @@ db.sqlite3
 
 # NodeJS
 node_modules
+
+# Boilerplate
+# These shold be removed in actual site
+static/admin/*
+static/django_extensions/*

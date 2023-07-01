@@ -4,6 +4,9 @@ from appconf import AppConf
 # Django Imports
 from django.conf import settings  # noqa
 
+# ZION Shared Library Imports
+from zion.constants.timezones import TIMEZONES
+
 
 class AccountAppConf(AppConf):
     CREATE_ON_SAVE = True
@@ -19,6 +22,7 @@ class AccountAppConf(AppConf):
     EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = None
     EMAIL_CONFIRMATION_URL = "account:confirm_email"
     HOOKS = "zion.apps.account.hooks.AccountDefaultHooks"
+    TIMEZONES = TIMEZONES
 
     class Meta:
         prefix = "zion_account"

@@ -20,7 +20,7 @@ from split_settings.tools import (
 from core.settings.components.dirs import BASE_DIR
 
 
-config = Config(RepositoryEnv(BASE_DIR / ".env"))
+config = Config(RepositoryEnv(BASE_DIR.parent / ".env"))
 
 ENV = config("DJANGO_ENV", default="development")
 
