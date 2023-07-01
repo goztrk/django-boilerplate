@@ -1,8 +1,8 @@
 """
 Accounts Models
 """
-# Application Imports
-from accounts.models.account import (
+# Third Party (PyPI) Imports
+from account.models.account import (
     Account,
 )
 
