@@ -13,5 +13,5 @@ from django.urls import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/", include("accounts.urls", namespace="accounts")),
+    path("account/", include("zion.apps.account.urls", namespace="account")),
 ]
