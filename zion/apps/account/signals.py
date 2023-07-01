@@ -1,10 +1,14 @@
 # Django Imports
-from django.dispatch import Signal
+import django.dispatch
 
 
-email_confirmed = Signal()
-email_confirmation_sent = Signal()
-user_logged_in = Signal()
-user_login_attempt = Signal()
-signup_code_used = Signal()
-signup_code_send = Signal()
+user_signed_up = django.dispatch.Signal()
+user_sign_up_attempt = django.dispatch.Signal()
+user_logged_in = django.dispatch.Signal()
+user_login_attempt = django.dispatch.Signal()
+signup_code_sent = django.dispatch.Signal()
+signup_code_used = django.dispatch.Signal()
+email_confirmed = django.dispatch.Signal()
+email_confirmation_sent = django.dispatch.Signal()
+password_changed = django.dispatch.Signal()
+password_expired = django.dispatch.Signal()
