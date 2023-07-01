@@ -1,9 +1,0 @@
-black
-coverage
-djlint
-flake8
-isort
-libsass
-pre-commit
-pytest-django
-watchdog
