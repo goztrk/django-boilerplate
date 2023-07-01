@@ -37,7 +37,7 @@ class LoginView(FormView):
     def __init__(self, **kwargs: Any) -> None:
         self.form_class = (
             LoginUsernameForm
-            if self.ZION_ACCOUNT_LOGIN_FIELD == "username"
+            if settings.ZION_ACCOUNT_LOGIN_FIELD == "username"
             else LoginEmailForm
         )
         super().__init__(**kwargs)
