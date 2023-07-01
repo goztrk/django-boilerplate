@@ -26,3 +26,5 @@ def user_post_save(sender, **kwargs):
 
 email_confirmed = Signal()
 email_confirmation_sent = Signal()
+user_logged_in = Signal()
+user_login_attempt = Signal()
