@@ -10,14 +10,14 @@ dj-database-url==2.0.0
     # via -r requirements.in
 django==4.2.2
     # via
-    #   -r requirements.in
+    #   -r zion/requirements.in
     #   dj-database-url
     #   django-appconf
     #   django-extensions
 django-appconf==1.0.5
-    # via -r requirements.in
+    # via -r zion/requirements.in
 django-extensions==3.2.3
-    # via -r requirements.in
+    # via -r zion/requirements.in
 django-split-settings==1.2.0
     # via -r requirements.in
 python-decouple==3.8

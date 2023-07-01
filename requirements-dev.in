@@ -1,10 +1,2 @@
 -c requirements.txt
-black
-coverage
-djlint
-flake8
-isort
-libsass
-pre-commit
-pytest-django
-watchdog
+-r zion/requirements-dev.in

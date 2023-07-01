@@ -1,6 +1,4 @@
-django
-django-appconf
-django-extensions
+-r zion/requirements.in
 django-split-settings
 python-decouple
 dj_database_url
