@@ -1,8 +1,8 @@
 """
 Accounts Models
 """
-# Third Party (PyPI) Imports
-from account.models.account import (
+# ZION Shared Library Imports
+from zion.apps.account.models.account import (
     Account,
 )
 

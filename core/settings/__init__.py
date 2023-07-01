@@ -16,11 +16,6 @@ from split_settings.tools import (
     optional,
 )
 
-# ZION Shared Library Imports
-from zion.utils.settings import (
-    resource,
-)
-
 # Application Imports
 from core.settings.components.dirs import (
     BASE_DIR,
@@ -35,8 +30,6 @@ include(
     *[
         # Include all settings components
         "components/*.py",
-        # Include App Settings
-        resource("accounts", "settings.py"),
         # Select the right environment
         f"environments/{ENV}.py",
         # Optionally override some settings

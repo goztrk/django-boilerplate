@@ -10,5 +10,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "zion",
-    "accounts",
+    "core",
+    "zion.apps.account",
 ]
