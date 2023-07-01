@@ -1,0 +1,3 @@
+[submodule "zion"]
+	path = zion
+	url = https://github.com/goztrk/django-zion.git
