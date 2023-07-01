@@ -1,4 +1,5 @@
 django
+django-appconf
 django-split-settings
 python-decouple
 dj_database_url

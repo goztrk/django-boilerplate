@@ -12,6 +12,9 @@ django==4.2.2
     # via
     #   -r requirements.in
     #   dj-database-url
+    #   django-appconf
+django-appconf==1.0.5
+    # via -r requirements.in
 django-split-settings==1.2.0
     # via -r requirements.in
 python-decouple==3.8
