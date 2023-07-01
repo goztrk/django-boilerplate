@@ -1,14 +1,25 @@
 # Python Standard Library
 import functools
-from urllib.parse import urlparse
+from urllib.parse import (
+    urlparse,
+    urlunparse,
+)
 
 # Django Imports
 from django.contrib.auth import get_user_model
 from django.core.exceptions import SuspiciousOperation
+from django.http import (
+    HttpResponseRedirect,
+    QueryDict,
+)
 from django.urls import (
     NoReverseMatch,
     reverse,
 )
+from django.utils.encoding import force_str
+
+# ZION Shared Library Imports
+from zion.apps.account.conf import settings
 
 
 def get_user_lookup_kwargs(kwargs):
@@ -51,6 +62,29 @@ def default_redirect(request, fallback_url, **kwargs):
         # from the a source the developer choose.
         is_safe(fallback_url, raise_on_fail=True)
         return fallback_url
+
+
+def handle_redirect_to_login(request, **kwargs):
+    login_url = kwargs.get("login_url")
+    redirect_field_name = kwargs.get("redirect_field_name")
+    next_url = kwargs.get("next_url")
+    if login_url is None:
+        login_url = settings.ZION_ACCOUNT_LOGIN_URL
+    if next_url is None:
+        next_url = request.get_full_path()
+    try:
+        login_url = reverse(login_url)
+    except NoReverseMatch:
+        if callable(login_url):
+            raise
+        if "/" not in login_url and "." not in login_url:
+            raise
+    url_bits = list(urlparse(force_str(login_url)))
+    if redirect_field_name:
+        querystring = QueryDict(url_bits[4], mutable=True)
+        querystring[redirect_field_name] = next_url
+        url_bits[4] = querystring.urlencode(safe="/")
+    return HttpResponseRedirect(urlunparse(url_bits))
 
 
 def get_form_data(form, field_name, default=None):

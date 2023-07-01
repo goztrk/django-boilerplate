@@ -53,7 +53,7 @@ class SignupForm(forms.Form):
     def clean_email(self):
         value = self.cleaned_data["email"]
         qs = EmailAddress.objects.filter(email__iexact=value)
-        if not qs.exists() or not settings.ACCOUNT_EMAIL_UNIQUE:
+        if not qs.exists() or not settings.ZION_ACCOUNT_EMAIL_UNIQUE:
             return value
         raise forms.ValidationError(_("A user is registered with this email address."))
 

@@ -8,6 +8,7 @@ from zion.apps.account.forms.password import (
     PasswordResetForm,
     PasswordResetTokenForm,
 )
+from zion.apps.account.forms.settings import SettingsForm
 from zion.apps.account.forms.signup import SignupForm
 
 
@@ -17,5 +18,6 @@ __all__ = [
     "ChangePasswordForm",
     "PasswordResetForm",
     "PasswordResetTokenForm",
+    "SettingsForm",
     "SignupForm",
 ]

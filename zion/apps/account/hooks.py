@@ -60,7 +60,7 @@ class AccountDefaultHooks(ZionBaseHooks):
 
 class HookProxy(object):
     def __getattr__(self, attr):
-        return getattr(settings.ACCOUNT_HOOKS, attr)
+        return getattr(settings.ZION_ACCOUNT_HOOKS, attr)
 
 
 hooks = HookProxy()

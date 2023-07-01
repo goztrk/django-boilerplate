@@ -111,7 +111,7 @@ class SignupCode(models.Model):
         )
 
     def send(self, **kwargs):
-        protocol = settings.ACCOUNT_DEFAULT_HTTP_PROTOCOL
+        protocol = settings.ZION_ACCOUNT_DEFAULT_HTTP_PROTOCOL
         current_site = (
             kwargs["site"] if "site" in kwargs else Site.objects.get_current()
         )

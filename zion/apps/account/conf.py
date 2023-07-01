@@ -5,6 +5,7 @@ from appconf import AppConf
 from django.conf import settings  # noqa
 
 # ZION Shared Library Imports
+from zion.constants.languages import LANGUAGES
 from zion.constants.timezones import TIMEZONES
 
 
@@ -37,6 +38,7 @@ class AccountAppConf(AppConf):
 
     HOOKS = "zion.apps.account.hooks.AccountDefaultHooks"
     TIMEZONES = TIMEZONES
+    LANGUAGES = LANGUAGES
 
     class Meta:
         prefix = "zion_account"
