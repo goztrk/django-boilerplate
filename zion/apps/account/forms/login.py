@@ -4,17 +4,13 @@ from collections import OrderedDict
 # Django Imports
 from django import forms
 from django.contrib import auth
-from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
 # ZION Shared Library Imports
 from zion.apps.account.conf import settings
+from zion.apps.account.forms.constants import USER_FIELD_MAX_LENGTH
 from zion.apps.account.forms.fields import PasswordField
 from zion.apps.account.hooks import hooks
-
-
-User = get_user_model()
-USER_FIELD_MAX_LENGTH = getattr(User, User.USERNAME_FIELD).field.max_length
 
 
 class LoginForm(forms.Form):
