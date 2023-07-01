@@ -1,10 +1,6 @@
 # ZION Shared Library Imports
-from zion.apps.account.conf import (
-    settings,
-)
-from zion.utils.hooks import (
-    ZionBaseHooks,
-)
+from zion.apps.account.conf import settings
+from zion.utils.hooks import ZionBaseHooks
 
 
 class AccountDefaultHooks(ZionBaseHooks):

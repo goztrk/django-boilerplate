@@ -1,40 +1,22 @@
 # Python Standard Library
 import datetime
-from typing import (
-    Collection,
-)
+from typing import Collection
 
 # Django Imports
-from django import (
-    forms,
-)
-from django.contrib.sites.models import (
-    Site,
-)
+from django import forms
+from django.contrib.sites.models import Site
 from django.db import (
     models,
     transaction,
 )
-from django.urls import (
-    reverse,
-)
-from django.utils import (
-    timezone,
-)
+from django.urls import reverse
+from django.utils import timezone
 
 # ZION Shared Library Imports
-from zion.apps.account import (
-    signals,
-)
-from zion.apps.account.conf import (
-    settings,
-)
-from zion.apps.account.hooks import (
-    hooks,
-)
-from zion.apps.account.managers import (
-    EmailAddressManager,
-)
+from zion.apps.account import signals
+from zion.apps.account.conf import settings
+from zion.apps.account.hooks import hooks
+from zion.apps.account.managers import EmailAddressManager
 
 
 class EmailAddress(models.Model):

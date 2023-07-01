@@ -4,29 +4,15 @@ Accounts Backends
 
 # Python Standard Library
 import operator
-from functools import (
-    reduce,
-)
-from typing import (
-    Any,
-)
+from functools import reduce
+from typing import Any
 
 # Django Imports
-from django.conf import (
-    settings,
-)
-from django.contrib.auth import (
-    get_user_model,
-)
-from django.contrib.auth.backends import (
-    ModelBackend,
-)
-from django.db.models import (
-    Q,
-)
-from django.http.request import (
-    HttpRequest,
-)
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
+from django.db.models import Q
+from django.http.request import HttpRequest
 
 
 UserModel = get_user_model()

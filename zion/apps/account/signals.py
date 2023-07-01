@@ -1,19 +1,13 @@
 # Django Imports
-from django.db.models.signals import (
-    post_save,
-)
+from django.db.models.signals import post_save
 from django.dispatch import (
     Signal,
     receiver,
 )
 
 # ZION Shared Library Imports
-from zion.apps.account.conf import (
-    settings,
-)
-from zion.apps.account.models import (
-    Account,
-)
+from zion.apps.account.conf import settings
+from zion.apps.account.models import Account
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

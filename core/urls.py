@@ -2,9 +2,7 @@
 URL configuration for core project.
 """
 # Django Imports
-from django.contrib import (
-    admin,
-)
+from django.contrib import admin
 from django.urls import (
     include,
     path,

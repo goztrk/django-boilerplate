@@ -3,9 +3,7 @@ Django Template Settings
 """
 
 # Application Imports
-from core.settings.components.dirs import (
-    BASE_DIR,
-)
+from core.settings.components.dirs import BASE_DIR
 
 
 TEMPLATES = [

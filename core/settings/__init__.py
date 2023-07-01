@@ -17,9 +17,7 @@ from split_settings.tools import (
 )
 
 # Application Imports
-from core.settings.components.dirs import (
-    BASE_DIR,
-)
+from core.settings.components.dirs import BASE_DIR
 
 
 config = Config(RepositoryEnv(BASE_DIR / ".env"))

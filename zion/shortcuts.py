@@ -1,18 +1,10 @@
 # Django Imports
-from django.http import (
-    HttpResponse,
-)
-from django.template import (
-    loader,
-)
+from django.http import HttpResponse
+from django.template import loader
 
 # ZION Shared Library Imports
-from zion.conf import (
-    settings,
-)
-from zion.utils import (
-    import_string,
-)
+from zion.conf import settings
+from zion.utils import import_string
 
 
 def render(

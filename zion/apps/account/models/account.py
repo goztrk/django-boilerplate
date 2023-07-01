@@ -1,15 +1,9 @@
 # Django Imports
-from django.db import (
-    models,
-)
+from django.db import models
 
 # ZION Shared Library Imports
-from zion.apps.account.conf import (
-    settings,
-)
-from zion.apps.account.models.email import (
-    EmailAddress,
-)
+from zion.apps.account.conf import settings
+from zion.apps.account.models.email import EmailAddress
 
 
 class Account(models.Model):

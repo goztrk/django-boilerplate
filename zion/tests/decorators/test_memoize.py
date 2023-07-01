@@ -2,9 +2,7 @@
 import pytest
 
 # ZION Shared Library Imports
-from zion.decorators import (
-    memoize,
-)
+from zion.decorators import memoize
 
 
 class TestGroup:

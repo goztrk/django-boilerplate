@@ -1,7 +1,5 @@
 # Third Party (PyPI) Imports
-from appconf import (
-    AppConf,
-)
+from appconf import AppConf
 
 # Django Imports
 from django.conf import settings  # noqa

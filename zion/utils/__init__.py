@@ -1,7 +1,5 @@
 # Django Imports
-from django.utils.module_loading import (
-    import_string,
-)
+from django.utils.module_loading import import_string
 
 
 __all__ = [

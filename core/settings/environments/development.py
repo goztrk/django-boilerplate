@@ -2,9 +2,7 @@
 Django Settings Environment Override
 """
 # Application Imports
-from core.settings.components.templates import (
-    TEMPLATES,
-    )
+from core.settings.components.templates import TEMPLATES
 
 
 DEBUG = True

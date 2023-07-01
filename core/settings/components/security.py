@@ -3,9 +3,7 @@ Django Security Settings
 """
 
 # Application Imports
-from core.settings import (
-    config,
-)
+from core.settings import config
 
 
 SECRET_KEY = config("DJANGO_SECRET_KEY")
