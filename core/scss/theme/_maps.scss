@@ -1,0 +1,41 @@
+//----------------------------------------------------------//
+//	OPTIONS
+//----------------------------------------------------------//
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-smooth-scroll: false;
+$enable-negative-margins: true;
+
+//----------------------------------------------------------//
+//	SPACING
+//----------------------------------------------------------//
+// Bootstrap spacers all good but not enough...
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer * .75,
+  4: $spacer,
+  5: $spacer * 1.25,
+  6: $spacer * 1.5,
+  7: $spacer * 1.75,
+  8: $spacer * 2,
+  9: $spacer * 2.25,
+  10: $spacer * 2.5,
+  11: $spacer * 3,
+  12: $spacer * 3.5,
+  13: $spacer * 4,
+  14: $spacer * 4.5,
+  15: $spacer * 5,
+  16: $spacer * 6,
+  17: $spacer * 7,
+  18: $spacer * 8,
+  19: $spacer * 9,
+  20: $spacer * 10,
+  21: $spacer * 12.5,
+  22: $spacer * 15,
+  23: $spacer * 17.5,
+  24: $spacer * 20,
+  25: $spacer * 22.5,
+);
