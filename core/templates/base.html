@@ -1,7 +1,7 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -12,9 +12,11 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
-  <body>
-    {% block content %}
-    {% endblock content %}
+  <body class="h-100 d-flex">
+    <main class="flex-grow-1">
+      {% block content %}
+      {% endblock content %}
+    </main>
 
     {% include "partials/cdns/bootstrap/js.html" with bootstrap_version="5.3.0" popper_version="2.11.8" %}
   </body>
