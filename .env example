@@ -1,0 +1,6 @@
+DJANGO_ENV=development
+DJANGO_SECRET_KEY=some_s3cret_key_that_hard_to_guess
+
+# Database
+#DATABASE_URL=postgres://core_db_user:c0r3_us3r_p4sS@db:5432/core_db
+DATABASE_URL=sqlite://./db.sqlite3
