@@ -1,15 +1,12 @@
-{% load static %}
-
-<!doctype html>
+{% load static js_urls %}
+<!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ page_title|default:'Welcome' }} | {{ site_name }}</title>
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {# Only prints script tag if `DJANGO_VITE_DEV_MODE` is `True` #}
     {% vite_hmr_client %}
@@ -21,9 +18,9 @@
       {% endblock content %}
     </main>
     {% include "partials/footer.html" %}
-
-    <script>window.Site = {};</script>
     {% include "partials/cdns/bootstrap/js.html" with bootstrap_version="5.3.0" popper_version="2.11.8" %}
+    <script>window.Site = {};</script>
+    {% print_js_urls %}
     {% vite_asset 'core/js/site.ts' %}
   </body>
 </html>
