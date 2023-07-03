@@ -18,3 +18,5 @@ TEMPLATES[0]["OPTIONS"]["debug"] = TEMPLATE_DEBUG
 # defined. But it does not work with `STATIC_ROOT`.
 STATIC_ROOT = ""
 STATICFILES_DIRS = [os.path.join(BASE_DIR.parent, "static")]
+
+DJANGO_VITE_DEV_MODE = DEBUG
