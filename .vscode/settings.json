@@ -12,6 +12,19 @@
       "source.fixAll": true
     }
   },
+  "[django-html]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "djlint.enableLinting": true,
+    "djlint.profile": "django",
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
   "python.formatting.provider": "none",
   "cSpell.words": ["uncacheable"]
 }

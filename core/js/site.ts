@@ -1,12 +1,10 @@
 (function SiteInit() {
   const Site = {
-    init: function () {
-    },
+    init: function () {},
   };
 
-  window.Site = window.Site !== undefined
-    ? Object.assign(window.Site, Site)
-    : Site;
+  window.Site =
+    window.Site !== undefined ? Object.assign(window.Site, Site) : Site;
 
   Site.init();
 })();
