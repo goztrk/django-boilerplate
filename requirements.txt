@@ -14,15 +14,16 @@ django==4.2.2
     #   dj-database-url
     #   django-appconf
     #   django-extensions
-    #   django-vite
 django-appconf==1.0.5
     # via -r zion/requirements.in
 django-extensions==3.2.3
     # via -r zion/requirements.in
 django-split-settings==1.2.0
     # via -r requirements.in
-django-vite==2.1.3
+gunicorn==21.2.0
     # via -r requirements.in
+packaging==23.1
+    # via gunicorn
 python-decouple==3.8
     # via -r requirements.in
 sqlparse==0.4.4

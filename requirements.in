@@ -1,5 +1,5 @@
 -r zion/requirements.in
 django-split-settings
-django_vite
 python-decouple
+gunicorn
 dj_database_url
