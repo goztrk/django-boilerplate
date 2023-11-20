@@ -12,7 +12,5 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django_extensions",
     "zion",
-    "zion.apps.account",
-    "zion.apps.js_urls",
     "core",
 ]
