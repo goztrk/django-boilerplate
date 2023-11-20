@@ -26,5 +26,6 @@
     }
   },
   "python.formatting.provider": "none",
-  "cSpell.words": ["uncacheable"]
+  "cSpell.words": ["uncacheable"],
+  "conventionalCommits.scopes": ["Accounts"]
 }
